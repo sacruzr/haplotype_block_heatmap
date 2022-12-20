@@ -3,6 +3,13 @@ import pandas as pd
 # load configuration file
 configfile: "./config.yaml"
 
+# Haploview extension of each method
+HV_EXT_METHODS = {
+	'GAB':'GABRIELblocks',
+	'GAM':'4GAMblocks',
+	'SPI':'SPINEblocks',
+}
+
 # read roi specification data
 rois = pd.read_csv(config['rois_table_path'])
 rois.set_index('roi_name', drop=False, inplace=True)
@@ -75,11 +82,31 @@ rule convert_splitted_to_haploview_by_roi:
         """
 # detect LD blocks usng Haploview
 rule get_ld_blocks_by_roi:
-    output:'{out_dir}/haploview/ld_blocks/{{roi_name}}.{hv_method}/'.format(out_dir=config['out_dir'], hv_method = config['haploview_method'])
+    output:
+        ld_blocks = '{out_dir}/haploview/ld_blocks/{{roi_name}}.block'.format(out_dir=config['out_dir']),
+        ld = '{out_dir}/haploview/ld_blocks/{{roi_name}}.LD'.format(out_dir=config['out_dir'])
+        
     input:
-        ped = '{out_dir}/haploview/data/{{roi_name}}.ped/'.format(out_dir=config['out_dir']),
-        info = '{out_dir}/haploview/data/{{roi_name}}.info/'.format(out_dir=config['out_dir'])
+        ped = '{out_dir}/haploview/data/{{roi_name}}.ped'.format(out_dir=config['out_dir']),
+        info = '{out_dir}/haploview/data/{{roi_name}}.info'.format(out_dir=config['out_dir'])
+    params:
+        method = config['haploview_method'],
+        hv_ext = HV_EXT_METHODS[config['haploview_method']]
+    log:
+        '{out_dir}/haploview/log/{{roi_name}}.log'.format(out_dir=config['out_dir'])
     shell:
+        """
+        haploview -n -pedfile {input.ped} \
+        -info {input.info} \
+        -skipcheck \
+        -log {log} \
+        -out {config[out_dir]}/haploview/ld_blocks/{wildcards.roi_name} \ 
+        -blockoutput {params.method} \
+        --dprime &&
+        mv {config[out_dir]}/haploview/ld_blocks/{wildcards.roi_name}.{params.hv_ext} \
+        {output.ld_blocks}
+        
+        """
         
 
 # select the block where roi is located

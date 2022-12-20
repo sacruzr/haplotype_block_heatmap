@@ -2,6 +2,5 @@ rois_table_path: data/rois_table.csv
 vcf_path: data/GCDT_bial_Q40_DP3_Ho10_MAF25_208_Santos_2022.vcf.gz
 gwas_dir: data/gwas_outs
 out_dir: results
-
-# Methods should be GAB, GAM and SPI
 haploview_method: GAM
+
