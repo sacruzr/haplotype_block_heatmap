@@ -1,0 +1,20 @@
+*****************************************************
+Haploview 4.2	Java Version: 17.0.3-internal
+*****************************************************
+
+
+Arguments:	-n	-pedfile	./results/haploview/data/EPP1.1.ped	-info	./results/haploview/data/EPP1.1.info	-out	./test	-skipcheck	-log	./test.log	--dprime	-blockoutput	SPI	
+
+
+Skipping genotype file check
+Using data file: ./results/haploview/data/EPP1.1.ped
+Using output fileroot: ./test
+Using marker information file: ./results/haploview/data/EPP1.1.info
+59 out of 59 markers passed the MAF threshold.
+59 out of 59 markers passed the Mendel threshold.
+59 out of 59 markers passed the genotyping threshold.
+59 out of 59 markers passed the Hardy Weinberg threshold.
+59 out of 59 markers passed all thresholds.
+Writing output to test.SPINEblocks
+File test.LD already exists and will be overwritten.
+Writing output to test.LD

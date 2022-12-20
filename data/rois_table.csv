@@ -1,0 +1,9 @@
+roi_name,Chrom,Pos,initial_window,gwas_out_filename
+EPP1.1,Chr01,1626829,5.00E+05,GAPIT.Association.GWAS_Results.FarmCPU.EPP_GH1.csv
+EPP1.2,Chr01,1626868,5.00E+05,GAPIT.Association.GWAS_Results.FarmCPU.EPP_GH2.csv
+StWP1.1,Chr01,50793604,5.00E+05,GAPIT.Association.GWAS_Results.FarmCPU.StWP_GH1.csv
+StWP3.4,Chr03,52066941,5.00E+05,GAPIT.Association.GWAS_Results.FarmCPU.StWP_GH2.csv
+SW_7.2,Chr07,2538704,5.00E+05,GAPIT.Association.GWAS_Results.FarmCPU.SW_Field.csv
+StWP8.6,Chr08,334241,5.00E+05,GAPIT.Association.GWAS_Results.FarmCPU.StWP_GH1.csv
+YdPl8.5,Chr08,3658229,5.00E+05,GAPIT.Association.GWAS_Results.FarmCPU.YdPl_GH1.csv
+YdPl8.6,Chr08,50339512,5.00E+05,GAPIT.Association.GWAS_Results.FarmCPU.YdPl_GH1.csv

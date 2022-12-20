@@ -1,0 +1,32 @@
+PLINK v1.90b6.21 64-bit (19 Oct 2020)
+Options in effect:
+  --allow-extra-chr
+  --double-id
+  --out results/haploview/data/EPP1.1
+  --recode HV
+  --snps-only just-acgt
+  --vcf results/vcfs/window_roi/EPP1.1_splitted.vcf.gz
+
+Hostname: americaslab02
+Working directory: /home/scruz/pipelines/haplotype_block_heatmap
+Start time: Fri Dec 16 19:44:38 2022
+
+Random number seed: 1671219878
+515609 MB RAM detected; reserving 257804 MB for main workspace.
+--vcf: results/haploview/data/EPP1.1-temporary.bed +
+results/haploview/data/EPP1.1-temporary.bim +
+results/haploview/data/EPP1.1-temporary.fam written.
+59 variants loaded from .bim file.
+312 people (0 males, 0 females, 312 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to results/haploview/data/EPP1.1.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 312 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.848816.
+59 variants and 312 people pass filters and QC.
+Note: No phenotypes present.
+results/haploview/data/EPP1.1.chr-1.ped +
+results/haploview/data/EPP1.1.chr-1.info created.
+--recode HV complete.
+
+End time: Fri Dec 16 19:44:38 2022
